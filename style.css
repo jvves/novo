@@ -1,0 +1,177 @@
+:root {
+    --azul-principal: #0c133f;
+    --azul-escuro: #2b2c48;
+    --amarelo-gold: #cba776;
+    --branco: #ffffff;
+    --fundo-pagina: #f4f6f8; 
+    --texto-principal: #0c133f; 
+    --texto-escuro: #2b2c48;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background-color: var(--fundo-pagina); 
+    line-height: 1.6;
+    color: var(--texto-escuro);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.secao-atuacao {
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px; 
+    background-color: var(--branco);
+    border-radius: 16px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(43, 44, 72, 0.08); 
+}
+
+.coluna-texto {
+    flex: 1;
+    min-width: 300px;
+}
+
+.coluna-texto h2 {
+    font-size: 2.8rem;
+    color: var(--texto-principal); 
+    margin: 0;
+}
+
+.coluna-texto h3 {
+    font-size: 1.5rem;
+    color: var(--texto-escuro);
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.divisor-gold {
+    border: 0;
+    height: 3px;
+    width: 100px;
+    margin: 0 0 25px 0;
+    background-image: linear-gradient(to right, var(--amarelo-gold), rgba(203, 167, 118, 0.5));
+}
+
+.coluna-texto p {
+    font-size: 1rem;
+    color: var(--texto-escuro);
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.coluna-texto h4 {
+    font-size: 1.3rem;
+    color: var(--amarelo-gold);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--amarelo-gold);
+    padding-left: 10px;
+}
+
+.lista-estados {
+    list-style: none;
+    padding: 0;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    column-gap: 20px;
+}
+
+.lista-estados li {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+    color: var(--texto-escuro); 
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.lista-estados li:hover {
+    transform: translateX(5px);
+    color: var(--amarelo-gold);
+    cursor: default;
+}
+
+.lista-estados li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--amarelo-gold);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.coluna-mapa {
+    flex: 1;
+    text-align: center;
+    min-width: 300px;
+}
+
+.coluna-mapa img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.coluna-mapa img:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.15));
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.coluna-mapa.hidden {
+    transition-delay: 0.2s;
+}
+
+@media (max-width: 768px) {
+    .secao-atuacao {
+        padding: 30px 15px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .coluna-texto h2 {
+        font-size: 2.2rem;
+    }
+
+    .coluna-texto h3 {
+        font-size: 1.3rem;
+    }
+
+    .lista-estados {
+        columns: 1;
+        -webkit-columns: 1;
+        -moz-columns: 1;
+    }
+}
+
