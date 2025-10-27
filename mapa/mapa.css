@@ -1,0 +1,86 @@
+:root {
+    --amarelo-gold: #cba776;
+    --mapa-borda-estado: #ead3b4; 
+    --mapa-icone-padrao: #7381df; 
+    --mapa-hover: #7a7a85;      
+    --mapa-texto-label: #212136; 
+}
+
+.parca, .map-content {
+    flex: 1;
+    min-width: 200px;
+}
+
+
+#map {
+    width: 100%;
+    height: auto;
+}
+
+#map .state {
+    cursor: pointer;
+}
+
+#map .model .state .shape {
+    fill: var(--amarelo-gold);
+    stroke: var(--mapa-borda-estado);
+    stroke-width: 1.5px;
+    transition: fill 0.3s ease;
+}
+
+#map .model .state .icon_state {
+    fill: var(--mapa-icone-padrao);
+    transition: fill 0.3s ease;
+}
+
+#map .model .state .label_icon_state {
+    fill: var(--mapa-texto-label);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    pointer-events: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Efeito HOVER nos Estados */
+#map .model .state:hover .shape,
+#map .model .state:hover .icon_state {
+    fill: var(--mapa-hover);
+}
+
+/* Efeito ACTIVE (Clicado) nos Estados */
+#map .model .state.active .shape,
+#map .model .state.active .icon_state {
+    fill: var(--mapa-icone-padrao);
+}
+
+#state_se .icon_state,
+#state_al .icon_state,
+#state_es .icon_state,
+#state_rj .icon_state,
+#state_rn .icon_state,
+#state_pb .icon_state,
+#state_df .icon_state {
+    r: 8 !important; 
+}
+
+#state_se .label_icon_state,
+#state_al .label_icon_state,
+#state_es .label_icon_state,
+#state_rj .label_icon_state,
+#state_rn .label_icon_state,
+#state_pb .label_icon_state,
+#state_df .label_icon_state {
+    font-size: 8px !important;
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    .map-content { 
+        max-width: 90%; 
+        margin: 0 auto; 
+    }
+}
